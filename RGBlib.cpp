@@ -19,15 +19,15 @@ Cor RGB::cores[] = {
   {160, 80, 0}
 };
 
-RGB::Cor RGB::dadosVermelho = RGB::cores[0];
-RGB::Cor RGB::dadosLaranja = RGB::cores[1];
-RGB::Cor RGB::dadosAmarelo = RGB::cores[2];
-RGB::Cor RGB::dadosVerde = RGB::cores[3];
-RGB::Cor RGB::dadosCiano = RGB::cores[4];
-RGB::Cor RGB::dadosAzul = RGB::cores[5];
-RGB::Cor RGB::dadosRoxo = RGB::cores[6];
-RGB::Cor RGB::dadosRosa = RGB::cores[7];
-RGB::Cor RGB::dadosMarrom = RGB::cores[8];
+Cor RGB::dadosVermelho = RGB::cores[0];
+Cor RGB::dadosLaranja = RGB::cores[1];
+Cor RGB::dadosAmarelo = RGB::cores[2];
+Cor RGB::dadosVerde = RGB::cores[3];
+Cor RGB::dadosCiano = RGB::cores[4];
+Cor RGB::dadosAzul = RGB::cores[5];
+Cor RGB::dadosRoxo = RGB::cores[6];
+Cor RGB::dadosRosa = RGB::cores[7];
+Cor RGB::dadosMarrom = RGB::cores[8];
 
 RGB::RGB(int vermelho, int azul, int verde)
 {
