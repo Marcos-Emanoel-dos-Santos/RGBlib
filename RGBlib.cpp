@@ -1,13 +1,9 @@
-/*
-RGBlib
-Autor: Eggsbennedit
-Junho de 2023
 */
 
 #include "Arduino.h"
 #include "RGBlib.h"
 
-RGB::Cor RGB::cores[] = {
+Cor RGB::cores[] = {
   {255, 0, 0},
   {255, 150, 0},
   {255, 255, 0},
