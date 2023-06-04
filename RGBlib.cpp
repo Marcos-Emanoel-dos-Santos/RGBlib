@@ -7,12 +7,6 @@ Junho de 2023
 #include "Arduino.h"
 #include "RGBlib.h"
 
-struct Cor {
-  byte vm; // Valor de Vermelho
-  byte vd; // Valor de Verde
-  byte az; // Valor de Azul
-};
-
 RGB::Cor RGB::cores[] = {
   {255, 0, 0},
   {255, 150, 0},
