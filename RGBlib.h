@@ -9,6 +9,12 @@ Junho de 2023
 
 #include "Arduino.h"
 
+struct Cor {
+  byte vm; // Valor de Vermelho
+  byte vd; // Valor de Verde
+  byte az; // Valor de Azul
+};
+
 class RGB
 {
   public:
@@ -17,6 +23,8 @@ class RGB
   private:
     int _vermelho; int _verde; int _azul;
 };
+
+
 
 #endif
   
