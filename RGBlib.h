@@ -4,8 +4,8 @@ Autor: Eggsbennedit
 Junho de 2023
 */
 
-#ifndef RGBlib
-#define RGBlib
+#ifndef RGBlib_h
+#define RGBlib_h
 
 #include "Arduino.h"
 
@@ -18,6 +18,5 @@ class RGB
     int _vermelho; int _verde; int _azul;
 };
 
-
-
 #endif
+  
