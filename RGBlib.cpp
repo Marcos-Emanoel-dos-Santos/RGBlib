@@ -86,5 +86,6 @@ void RGB::acender(String cor)
     analogWrite(_verde,0);
     analogWrite(_azul,0);
     delay(1000);
+    }
   }
 }
