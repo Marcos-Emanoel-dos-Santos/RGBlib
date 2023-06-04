@@ -24,15 +24,15 @@ Cor cores[] = {
   {255, 0, 255},
   {160, 80, 0}
 };
-Cor Vermelho = cores[0];
-Cor Laranja = cores[1];
-Cor Amarelo = cores[2];
-Cor Verde = cores[3];
-Cor Ciano = cores[4];
-Cor Azul = cores[5];
-Cor Roxo = cores[6];
-Cor Rosa = cores[7];
-Cor Marrom = cores[8];
+Cor dadosVermelho = cores[0];
+Cor dadosLaranja = cores[1];
+Cor dadosAmarelo = cores[2];
+Cor dadosVerde = cores[3];
+Cor dadosCiano = cores[4];
+Cor dadosAzul = cores[5];
+Cor dadosRoxo = cores[6];
+Cor dadosRosa = cores[7];
+Cor dadosMarrom = cores[8];
 
 RGB::RGB(int vermelho, int azul, int verde)
 {
@@ -46,49 +46,49 @@ RGB::RGB(int vermelho, int azul, int verde)
 void RGB::acender(String cor)
 {
   if(cor == "Vermelho"){
-  analogWrite(_vermelho, Vermelho.vm);
-  analogWrite(_verde, Vermelho.vd);
-  analogWrite(_azul, Vermelho.az);
+  analogWrite(_vermelho, dadosVermelho.vm);
+  analogWrite(_verde, dadosVermelho.vd);
+  analogWrite(_azul, dadosVermelho.az);
   } else
   if(cor == "Laranja"){
-  analogWrite(_vermelho, Laranja.vm);
-  analogWrite(_verde, Laranja.vd);
-  analogWrite(_azul, Laranja.az);
+  analogWrite(_vermelho, dadosLaranja.vm);
+  analogWrite(_verde, dadosLaranja.vd);
+  analogWrite(_azul, dadosLaranja.az);
   } else
   if(cor == "Amarelo"){
-  analogWrite(_vermelho, Amarelo.vm);
-  analogWrite(_verde, Amarelo.vd);
-  analogWrite(_azul, Amarelo.az);
+  analogWrite(_vermelho, dadosAmarelo.vm);
+  analogWrite(_verde, dadosAmarelo.vd);
+  analogWrite(_azul, dadosAmarelo.az);
   } else
   if(cor == "Verde"){
-  analogWrite(_vermelho, Verde.vm);
-  analogWrite(_verde, Verde.vd);
-  analogWrite(_azul, Verde.az);
+  analogWrite(_vermelho, dadosVerde.vm);
+  analogWrite(_verde, dadosVerde.vd);
+  analogWrite(_azul, dadosVerde.az);
   } else
   if(cor == "Ciano"){
-  analogWrite(_vermelho, Ciano.vm);
-  analogWrite(_verde, Ciano.vd);
-  analogWrite(_azul, Ciano.az);
+  analogWrite(_vermelho, dadosCiano.vm);
+  analogWrite(_verde, dadosCiano.vd);
+  analogWrite(_azul, dadosCiano.az);
   } else
   if(cor == "Azul"){
-  analogWrite(_vermelho, Azul.vm);
-  analogWrite(_verde, Azul.vd);
-  analogWrite(_azul, Azul.az);
+  analogWrite(_vermelho, dadosAzul.vm);
+  analogWrite(_verde, dadosAzul.vd);
+  analogWrite(_azul, dadosAzul.az);
   } else
   if(cor == "Roxo"){
-  analogWrite(_vermelho, Roxo.vm);
-  analogWrite(_verde, Roxo.vd);
-  analogWrite(_azul, Roxo.az);
+  analogWrite(_vermelho, dadosRoxo.vm);
+  analogWrite(_verde, dadosRoxo.vd);
+  analogWrite(_azul, dadosRoxo.az);
   } else
   if(cor == "Rosa"){
-  analogWrite(_vermelho, Rosa.vm);
-  analogWrite(_verde, Rosa.vd);
-  analogWrite(_azul, Rosa.az);
+  analogWrite(_vermelho, dadosRosa.vm);
+  analogWrite(_verde, dadosRosa.vd);
+  analogWrite(_azul, dadosRosa.az);
   } else
   if(cor == "Marrom"){
-  analogWrite(_vermelho, Marrom.vm);
-  analogWrite(_verde, Marrom.vd);
-  analogWrite(_azul, Marrom.az);
+  analogWrite(_vermelho, dadosMarrom.vm);
+  analogWrite(_verde, dadosMarrom.vd);
+  analogWrite(_azul, dadosMarrom.az);
   } else {
   analogWrite(_vermelho, 255);
   analogWrite(_verde, 0);
