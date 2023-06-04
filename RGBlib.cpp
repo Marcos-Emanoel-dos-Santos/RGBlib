@@ -13,7 +13,7 @@ struct Cor {
   byte az; // Valor de Azul
 };
 
-Cor cores[] = {
+RGB::Cor RGB::cores[] = {
   {255, 0, 0},
   {255, 150, 0},
   {255, 255, 0},
@@ -24,15 +24,16 @@ Cor cores[] = {
   {255, 0, 255},
   {160, 80, 0}
 };
-Cor dadosVermelho = cores[0];
-Cor dadosLaranja = cores[1];
-Cor dadosAmarelo = cores[2];
-Cor dadosVerde = cores[3];
-Cor dadosCiano = cores[4];
-Cor dadosAzul = cores[5];
-Cor dadosRoxo = cores[6];
-Cor dadosRosa = cores[7];
-Cor dadosMarrom = cores[8];
+
+RGB::Cor RGB::dadosVermelho = RGB::cores[0];
+RGB::Cor RGB::dadosLaranja = RGB::cores[1];
+RGB::Cor RGB::dadosAmarelo = RGB::cores[2];
+RGB::Cor RGB::dadosVerde = RGB::cores[3];
+RGB::Cor RGB::dadosCiano = RGB::cores[4];
+RGB::Cor RGB::dadosAzul = RGB::cores[5];
+RGB::Cor RGB::dadosRoxo = RGB::cores[6];
+RGB::Cor RGB::dadosRosa = RGB::cores[7];
+RGB::Cor RGB::dadosMarrom = RGB::cores[8];
 
 RGB::RGB(int vermelho, int azul, int verde)
 {
