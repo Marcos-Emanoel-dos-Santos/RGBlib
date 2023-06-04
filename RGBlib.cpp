@@ -38,9 +38,7 @@ RGB::RGB(int vermelho, int azul, int verde)
   _verde = verde;
   _azul = azul;
 }
-void RGB::acender(String cor)
-{
-  void RGB::acender(String cor) {
+void RGB::acender(String cor) {
   if (cor == "Vermelho") {
     analogWrite(_vermelho, cores[0].vm);
     analogWrite(_verde, cores[0].vd);
