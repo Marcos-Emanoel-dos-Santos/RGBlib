@@ -1,3 +1,7 @@
+/*
+RGBlib
+Autor: Eggsbennedit
+Junho de 2023
 */
 
 #include "Arduino.h"
