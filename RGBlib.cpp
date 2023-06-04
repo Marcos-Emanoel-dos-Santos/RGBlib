@@ -87,7 +87,7 @@ void RGB::acender(String cor)
   } else
   if(cor == "Marrom"){
   analogWrite(_vermelho, Marrom.vm);
-  analogWrite(_azul, Marrom.vd);
+  analogWrite(_verde, Marrom.vd);
   analogWrite(_azul, Marrom.az);
   } else {
   analogWrite(_vermelho, 255);
