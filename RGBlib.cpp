@@ -76,3 +76,40 @@ void RGB::acender(String cor) {
     delay(1000);
   }
 }
+
+void RGB::transicao(int ms)
+{
+  for(int i = 0; i < 1536; i += 32){
+    if(i < 256){ // VERMELHO -> AMARELO
+      analogWrite(_vermelho, 255);
+      analogWrite(_verde, i);
+      analogWrite(_azul, 0);
+    }
+    else if(i > 256 && i < 512){ // AMARELO -> VERDE
+      analogWrite(_vermelho, 255 - (i - 255));
+      analogWrite(_verde, 255);
+      analogWrite(_azul, 0);
+    }
+    else if(i > 512 && i < 768){ // VERDE -> CIANO
+      analogWrite(_vermelho, 0);
+      analogWrite(_verde, 255);
+      analogWrite(_azul, (i - 512));
+    }
+    else if(i > 768 && i < 1024){ // CIANO -> AZUL
+      analogWrite(_vermelho, 0);
+      analogWrite(_verde, 255 - (i-768));
+      analogWrite(_azul, 255);
+    }
+    else if(i > 1024 && i < 1280){ // AZUL -> ROSA
+      analogWrite(_vermelho, i - 1024);
+      analogWrite(_verde, 0);
+      analogWrite(_azul, 255);
+    }
+    else if(i > 1280 && i < 1536){ // AZUL -> ROSA
+      analogWrite(_vermelho, 255);
+      analogWrite(_verde, 0);
+      analogWrite(_azul, 255 - (i - 1280));
+    }
+    delay(ms);
+  }
+}
