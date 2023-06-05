@@ -8,26 +8,16 @@ Junho de 2023
 #include "RGBlib.h"
 
 Cor RGB::cores[] = {
-  {255, 0, 0},
-  {255, 150, 0},
-  {255, 255, 0},
-  {0, 255, 0},
-  {0, 255, 180},
-  {0, 0, 255},
-  {100, 0, 255},
-  {255, 0, 255},
-  {160, 80, 0}
+  {255, 0, 0},               // verrmelho
+  {255, 150, 0},               // laranja
+  {255, 255, 0},               // amarelo
+  {0, 255, 0},               // verde
+  {0, 255, 180},               // ciano
+  {0, 0, 255},               // azul
+  {100, 0, 255},               // roxo
+  {255, 0, 255},               // rosa
+  {160, 80, 0}               // marrom
 };
-
-Cor RGB::dadosVermelho = RGB::cores[0];
-Cor RGB::dadosLaranja = RGB::cores[1];
-Cor RGB::dadosAmarelo = RGB::cores[2];
-Cor RGB::dadosVerde = RGB::cores[3];
-Cor RGB::dadosCiano = RGB::cores[4];
-Cor RGB::dadosAzul = RGB::cores[5];
-Cor RGB::dadosRoxo = RGB::cores[6];
-Cor RGB::dadosRosa = RGB::cores[7];
-Cor RGB::dadosMarrom = RGB::cores[8];
 
 RGB::RGB(int vermelho, int azul, int verde)
 {
