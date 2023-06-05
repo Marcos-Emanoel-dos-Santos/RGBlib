@@ -23,16 +23,6 @@ class RGB
   private:
     int _vermelho; int _verde; int _azul;
     static Cor cores[];
-    static Cor dadosVermelho;
-    static Cor dadosLaranja;
-    static Cor dadosAmarelo;
-    static Cor dadosVerde;
-    static Cor dadosCiano;
-    static Cor dadosAzul;
-    static Cor dadosRoxo;
-    static Cor dadosRosa;
-    static Cor dadosMarrom;
 };
 
 #endif
-  
