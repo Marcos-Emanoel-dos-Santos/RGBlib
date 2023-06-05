@@ -77,7 +77,7 @@ void RGB::acender(String cor) {
   }
 }
 
-void RGB::transicao(int ms)
+void RGB::transicao(int ms = 0)
 {
   for(int i = 0; i < 1536; i += 32){
     if(i < 256){ // VERMELHO -> AMARELO
