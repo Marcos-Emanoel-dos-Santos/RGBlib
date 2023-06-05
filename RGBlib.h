@@ -20,6 +20,7 @@ class RGB
   public:
     RGB(int vermelho, int azul, int verde);
     void acender(String cor);
+    void transicao(int ms);
   private:
     int _vermelho; int _verde; int _azul;
     static Cor cores[];
