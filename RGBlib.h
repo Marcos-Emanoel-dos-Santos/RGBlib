@@ -17,7 +17,7 @@ struct Cor {
 struct corRel {
   String nome;
   int indice;
-}
+};
 
 class RGB
 {
@@ -29,8 +29,10 @@ class RGB
   private:
     int _vermelho; int _verde; int _azul;
     int indice1 = -1; int indice2 = -1;
-    int _cor1; int _cor2;
+    int _cor1 = -1; int _cor2 = -1;
+    int vmDiff; int vdDiff; int azDiff;
     static Cor cores[];
+    static corRel coresRel[];
 };
 
 #endif

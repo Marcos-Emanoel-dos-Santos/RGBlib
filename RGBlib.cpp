@@ -8,7 +8,7 @@ Junho de 2023
 #include "RGBlib.h"
 
 
-Cor RGB::cores[] = {
+Cor RGB::cores[] = { // cria uma array com as informações de cada cor disponível
   {255, 0, 0},               // vermelho
   {255, 150, 0},               // laranja
   {255, 255, 0},               // amarelo
@@ -22,7 +22,7 @@ Cor RGB::cores[] = {
   {255, 255, 255}               // branco
 };
 
-corRel RGB::coresRel[] = {
+corRel RGB::coresRel[] = { // cria um array com o nome das cores disponíveis e um índice
   {"Vermelho", 0},
   {"Laranja", 1},
   {"Amarelo", 2},
@@ -33,9 +33,8 @@ corRel RGB::coresRel[] = {
   {"Rosa", 7},
   {"Marrom", 8},
   {"Branco", 9}
-}
-
-RGB::RGB(int vermelho, int azul, int verde)
+};
+RGB::RGB(int vermelho, int azul, int verde)  // define os pinos do led
 {
   pinMode(vermelho, OUTPUT);
   pinMode(verde, OUTPUT);
@@ -43,8 +42,9 @@ RGB::RGB(int vermelho, int azul, int verde)
   _vermelho = vermelho;
   _verde = verde;
   _azul = azul;
-}
-void RGB::acender(String cor) {
+};
+
+void RGB::acender(String cor) {  // escreve a cor do led conforme informações da array cores[]
   if (cor == "Vermelho") {
     analogWrite(_vermelho, cores[0].vm);
     analogWrite(_verde, cores[0].vd);
@@ -97,7 +97,7 @@ void RGB::acender(String cor) {
   }
 }
 
-void RGB::rave(int ms)
+void RGB::rave(int ms)  // faz transição entre todas as cores do arco-íris
 {
   for(int i = 0; i < 1536; i += 32){
     if(i < 256){ // VERMELHO -> AMARELO
@@ -134,29 +134,37 @@ void RGB::rave(int ms)
   }
 }
 
-void RGB::transicao(String cor1, String cor2, int ms)
+void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre duas cores específicas
 {
   for (int i = 0; i < sizeof(coresRel); i++) {
     if (coresRel[i].nome == cor1) {
-      indice1 = i;
+      indice1 = coresRel[i].indice;
     }
     if (coresRel[i].nome == cor2) {
-      indice2 = i;
+      indice2 = coresRel[i].indice;
     }
   }
   for(int i=0; i<cores; i++){
-    if(indice1 == cores[i]){
-      _cor1 = i;
+    if(indice1 == i){
+      _cor1 = coresRel[i].indice;
     }
   }
   for(int i=0; i<cores; i++){
-    if(indice2 == cores[i]){
-      _cor2 = i;
+    if(indice2 == i){
+      _cor2 = coresRel[i].indice;
     }
   }
-  for(i=0; i<100; i++){
-    analogWrite(_vermelho, (cores[_cor1].vm - cores[_cor2].vm)/(ms/100));
-    analogWrite(_verde, (cores[_cor1].vd - cores[_cor2].vd)/(ms/100));
-    analogWrite(_azul, (cores[_cor1].az - cores[_cor2].az)/(ms/100));
+  vmDiff = cores[_cor1].vm - cores[_cor2].vm;
+  vdDiff = cores[_cor1].vd - cores[_cor2].vd;
+  azDiff = cores[_cor1].az - cores[_cor2].az;
+  for(int i=0; i<100; i++){
+    analogWrite(_vermelho, vmDiff/(ms/100));
+    analogWrite(_verde, vdDiff/(ms/100));
+    analogWrite(_azul, azDiff/(ms/100));
+  }
+  for(int i=0; i<100; i++){
+    analogWrite(_vermelho, -vmDiff/(ms/100));
+    analogWrite(_verde, -vdDiff/(ms/100));
+    analogWrite(_azul, -azDiff/(ms/100));
   }
 }
