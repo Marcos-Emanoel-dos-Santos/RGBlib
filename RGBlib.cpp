@@ -7,8 +7,9 @@ Junho de 2023
 #include "Arduino.h"
 #include "RGBlib.h"
 
+
 Cor RGB::cores[] = {
-  {255, 0, 0},               // verrmelho
+  {255, 0, 0},               // vermelho
   {255, 150, 0},               // laranja
   {255, 255, 0},               // amarelo
   {0, 255, 0},               // verde
@@ -16,8 +17,23 @@ Cor RGB::cores[] = {
   {0, 0, 255},               // azul
   {100, 0, 255},               // roxo
   {255, 0, 255},               // rosa
-  {160, 80, 0}               // marrom
+
+  {160, 80, 0},               // marrom
+  {255, 255, 255}               // branco
 };
+
+corRel RGB::coresRel[] = {
+  {"Vermelho", 0},
+  {"Laranja", 1},
+  {"Amarelo", 2},
+  {"Verde", 3},
+  {"Ciano", 4},
+  {"Azul", 5},
+  {"Roxo", 6},
+  {"Rosa", 7},
+  {"Marrom", 8},
+  {"Branco", 9}
+}
 
 RGB::RGB(int vermelho, int azul, int verde)
 {
@@ -65,6 +81,10 @@ void RGB::acender(String cor) {
     analogWrite(_vermelho, cores[8].vm);
     analogWrite(_verde, cores[8].vd);
     analogWrite(_azul, cores[8].az);
+  } else if (cor == "Branco") {
+    analogWrite(_vermelho, cores[9].vm);
+    analogWrite(_verde, cores[9].vd);
+    analogWrite(_azul, cores[9].az);
   } else {
     analogWrite(_vermelho,255);
     analogWrite(_verde,0);
@@ -77,7 +97,7 @@ void RGB::acender(String cor) {
   }
 }
 
-void RGB::transicao(int ms)
+void RGB::rave(int ms)
 {
   for(int i = 0; i < 1536; i += 32){
     if(i < 256){ // VERMELHO -> AMARELO
@@ -111,5 +131,32 @@ void RGB::transicao(int ms)
       analogWrite(_azul, 255 - (i - 1280));
     }
     delay(ms);
+  }
+}
+
+void RGB::transicao(String cor1, String cor2, int ms)
+{
+  for (int i = 0; i < sizeof(coresRel); i++) {
+    if (coresRel[i].nome == cor1) {
+      indice1 = i;
+    }
+    if (coresRel[i].nome == cor2) {
+      indice2 = i;
+    }
+  }
+  for(int i=0; i<cores; i++){
+    if(indice1 == cores[i]){
+      _cor1 = i;
+    }
+  }
+  for(int i=0; i<cores; i++){
+    if(indice2 == cores[i]){
+      _cor2 = i;
+    }
+  }
+  for(i=0; i<100; i++){
+    analogWrite(_vermelho, (cores[_cor1].vm - cores[_cor2].vm)/(ms/100));
+    analogWrite(_verde, (cores[_cor1].vd - cores[_cor2].vd)/(ms/100));
+    analogWrite(_azul, (cores[_cor1].az - cores[_cor2].az)/(ms/100));
   }
 }
