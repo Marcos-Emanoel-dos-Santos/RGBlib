@@ -161,10 +161,13 @@ void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre 
     analogWrite(_vermelho, vmDiff/(ms/100));
     analogWrite(_verde, vdDiff/(ms/100));
     analogWrite(_azul, azDiff/(ms/100));
+    delay(ms);
   }
   for(int i=0; i<100; i++){
     analogWrite(_vermelho, -vmDiff/(ms/100));
     analogWrite(_verde, -vdDiff/(ms/100));
     analogWrite(_azul, -azDiff/(ms/100));
+    delay(ms);
   }
 }
+
