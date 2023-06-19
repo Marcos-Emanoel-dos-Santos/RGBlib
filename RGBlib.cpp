@@ -8,7 +8,7 @@ Junho de 2023
 #include "RGBlib.h"
 
 
-Cor RGB::cores[10][] = { // cria uma array com as informações de cada cor disponível
+Cor RGB::cores[] = { // cria uma array com as informações de cada cor disponível
   {255, 0, 0},               // vermelho
   {255, 150, 0},               // laranja
   {255, 255, 0},               // amarelo
@@ -22,7 +22,7 @@ Cor RGB::cores[10][] = { // cria uma array com as informações de cada cor disp
   {255, 255, 255}               // branco
 };
 
-corRel RGB::coresRel[10][] = { // cria um array com o nome das cores disponíveis e um índice
+corRel RGB::coresRel[] = { // cria um array com o nome das cores disponíveis e um índice
   {"Vermelho", 0},
   {"Laranja", 1},
   {"Amarelo", 2},
