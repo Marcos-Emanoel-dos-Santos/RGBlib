@@ -34,7 +34,7 @@ corRel RGB::coresRel[] = { // cria um array com o nome das cores disponíveis e 
   {"Marrom", 8},
   {"Branco", 9}
 };
-RGB::RGB(int vermelho, int azul, int verde)  // define os pinos do led
+RGB::RGB(int vermelho, int verde, int azul)  // define os pinos do led
 {
   pinMode(vermelho, OUTPUT);
   pinMode(verde, OUTPUT);
