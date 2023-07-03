@@ -22,7 +22,7 @@ struct corRel {
 class RGB
 {
   public:
-    RGB(int vermelho, int azul, int verde);
+    RGB(int vermelho, int verde, int azul);
     void acender(String cor = "Vermelho");
     void rave(int ms = 0);
     void transicao(String cor1 = "Azul", String cor2 = "Rosa", int ms = 100);
