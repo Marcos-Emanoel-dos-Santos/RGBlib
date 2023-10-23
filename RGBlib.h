@@ -30,7 +30,7 @@ class RGB
     int _vermelho; int _verde; int _azul;
     int indice1 = -1; int indice2 = -1;
     int _cor1 = -1; int _cor2 = -1;
-    int vmDiff = 0; int vdDiff = 0; int azDiff = 0;
+    double vmDiff = 0; double vdDiff = 0; double azDiff = 0;
     static Cor cores[];
     static corRel coresRel[];
 };
