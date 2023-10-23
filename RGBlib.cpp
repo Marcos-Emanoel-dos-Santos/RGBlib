@@ -109,16 +109,6 @@ void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre 
       indice2 = coresRel[i].indice;
     }
   }
-  for(int i=0; i < sizeof(cores); i++){
-    if(indice1 == i){
-      _cor1 = coresRel[i].indice;
-    }
-  }
-  for(int i=0; i<cores; i++){
-    if(indice2 == i){
-      _cor2 = coresRel[i].indice;
-    }
-  }
   double vmDiff = cores[indice1].vm - cores[indice2].vm;
   double vdDiff = cores[indice1].vd - cores[indice2].vd;
   double azDiff = cores[indice1].az - cores[indice2].az;
@@ -135,4 +125,3 @@ void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre 
     delay(ms);
   }
 }
-
