@@ -90,7 +90,7 @@ void RGB::rave(int ms)  // faz transição entre todas as cores do arco-íris
       analogWrite(_verde, 255);
       analogWrite(_azul, 0);
     }
-    else if(i <= 256){ // VERMELHO -> AMARELO
+    else if(i < 256){ // VERMELHO -> AMARELO
       analogWrite(_vermelho, 255);
       analogWrite(_verde, i);
       analogWrite(_azul, 0);
