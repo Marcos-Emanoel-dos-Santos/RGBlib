@@ -109,9 +109,9 @@ void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre 
       indice2 = coresRel[i].indice;
     }
   }
-  double vmDiff = cores[indice1].vm - cores[indice2].vm;
-  double vdDiff = cores[indice1].vd - cores[indice2].vd;
-  double azDiff = cores[indice1].az - cores[indice2].az;
+  vmDiff = cores[indice1].vm - cores[indice2].vm;
+  vdDiff = cores[indice1].vd - cores[indice2].vd;
+  azDiff = cores[indice1].az - cores[indice2].az;
   for(int i=0; i<100; i++){
     analogWrite(_vermelho, vmDiff/(ms/100));
     analogWrite(_verde, vdDiff/(ms/100));
