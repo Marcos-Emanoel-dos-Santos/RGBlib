@@ -45,7 +45,7 @@ RGB::RGB(int vermelho, int verde, int azul)  // define os pinos do led
 
 void RGB::acender(String cor) {  // escreve a cor do led conforme informações da array cores[]
   for(int i=0; i<10; i++){
-    if(cor == coresRel[i]){
+    if(cor == coresRel[i].nome){
       analogWrite(_vermelho, cores[i].vm);
       analogWrite(_verde, cores[i].vd);
       analogWrite(_azul, cores[i].az);
@@ -109,7 +109,7 @@ void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre 
       indice2 = coresRel[i].indice;
     }
   }
-  for(int i=0; i<cores; i++){
+  for(int i=0; i < sizeof(cores); i++){
     if(indice1 == i){
       _cor1 = coresRel[i].indice;
     }
@@ -119,9 +119,9 @@ void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre 
       _cor2 = coresRel[i].indice;
     }
   }
-  double vmDiff = cores[_cor1].vm - cores[_cor2].vm;
-  double vdDiff = cores[_cor1].vd - cores[_cor2].vd;
-  double azDiff = cores[_cor1].az - cores[_cor2].az;
+  double vmDiff = cores[indice1].vm - cores[indice2].vm;
+  double vdDiff = cores[indice1].vd - cores[indice2].vd;
+  double azDiff = cores[indice1].az - cores[indice2].az;
   for(int i=0; i<100; i++){
     analogWrite(_vermelho, vmDiff/(ms/100));
     analogWrite(_verde, vdDiff/(ms/100));
