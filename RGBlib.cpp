@@ -97,9 +97,9 @@ void RGB::transicao(String cor1, String cor2, int ms)  // faz transição entre 
     }
   }
   // diferença entre as duas cores escolhidas
-  vmDiff = Cores[indice1].vm - Cores[indice2].vm;
-  vdDiff = Cores[indice1].vd - Cores[indice2].vd;
-  azDiff = Cores[indice1].az - Cores[indice2].az;
+  vmDiff = Cores[indice2].vm - Cores[indice1].vm;
+  vdDiff = Cores[indice2].vd - Cores[indice1].vd;
+  azDiff = Cores[indice2].az - Cores[indice1].az;
 
   for(int i=0; i<100; i++){
     // define a cor de cada pino como a cor inicial + 1 centésimo da diferença * i
