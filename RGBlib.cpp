@@ -20,7 +20,7 @@ CorComNome RGB::Cores[] = { // cria uma lista com nomes de cores e sua represent
   {"Branco", 255, 255, 255}
 };
 
-RGB::RGB(unit8_t vermelho, unit8_t verde, unit8_t azul)  // define os pinos do led
+RGB::RGB(uint8_t vermelho, uint8_t verde, uint8_t azul)  // define os pinos do led
 {
   pinMode(vermelho, OUTPUT);
   pinMode(verde, OUTPUT);
