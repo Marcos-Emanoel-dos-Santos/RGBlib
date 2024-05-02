@@ -14,7 +14,7 @@ struct CorComNome {
   byte vm;
   byte vd;
   byte az;
-}
+};
 
 class RGB
 {
