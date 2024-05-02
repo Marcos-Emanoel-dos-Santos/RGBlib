@@ -31,7 +31,7 @@ RGB::RGB(uint8_t vermelho, uint8_t verde, uint8_t azul)  // define os pinos do l
 };
 
 void RGB::acender(String cor) {  // escreve a cor do led conforme informações da array Cores[]
-  for(int i=0; i < sizeof(RGB::Cores); i++){
+  for(int i=0; i < 10; i++){
     if(cor == Cores[i].nome){
       analogWrite(_vermelho, Cores[i].vm);
       analogWrite(_verde, Cores[i].vd);
